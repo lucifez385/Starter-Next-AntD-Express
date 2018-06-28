@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+
+### Workspace Utilities Container ###########################
+    jobthai-bof:
+        image: registry.thinknet.co.th/sredev/node:8.9
+        ports:
+            - "8080:8080"
+        volumes:
+            - .:/usr/src/app
+        environment:
+            - NODE_PORT=8080
+            - NODE_ENV=development
+        command: ['/bin/sh', '-c', 'yarn install && yarn dev']
+networks:
+    default:
+        external:
+            name: microservicenetwork
