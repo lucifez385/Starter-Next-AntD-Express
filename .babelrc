@@ -1,9 +1,22 @@
 {
   "presets": [
-    "next/babel"
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "modules": "commonjs"
+        }
+      }
+    ]
   ],
   "plugins": [
     "transform-decorators-legacy",
+    [
+      "inline-dotenv",
+      {
+        "path": ".env"
+      }
+    ],
     [
       "import",
       {
@@ -11,5 +24,14 @@
         "style": "less"
       }
     ]
-  ]
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "istanbul",
+        "babel-plugin-rewire",
+        "transform-es2015-modules-commonjs"
+      ]
+    }
+  }
 }

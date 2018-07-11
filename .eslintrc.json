@@ -1,7 +1,6 @@
-module.exports = {
-  "plugins": [
-    "babel"
-  ],
+{
+  "parser": "babel-eslint",
+  "plugins": ["babel", "react"],
   "extends": "airbnb",
   "rules": {
     "semi": ["error", "never"],
@@ -9,10 +8,18 @@ module.exports = {
     "react/jsx-filename-extension": 0,
     "jsx-a11y/href-no-hash": 0,
     "no-underscore-dangle": 0,
-    "max-len": [2, {"code": 200, "tabWidth": 4, "ignoreUrls": true}]
+    "max-len": [
+      2,
+      {
+        "code": 200,
+        "tabWidth": 4,
+        "ignoreUrls": true
+      }
+    ],
+    "class-methods-use-this": 0
   },
   "env": {
     "browser": true,
-    "jest": true,
+    "jest": true
   }
-};
+}

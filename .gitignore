@@ -1,5 +1,9 @@
 /node_modules
 *lock.json
 .next
-yarn.lock
+yarn-error.log
+yarn-debug.log
 /dist
+yarn.lock
+/coverage
+.env
